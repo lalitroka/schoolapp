@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacementNamed(context, '/dashboard');
     });
     super.initState();
@@ -44,10 +44,10 @@ class _SplashScreenState extends State<SplashScreen> {
                       style: GoogleFonts.rubik(
                         fontWeight: FontWeight.bold,
                         fontSize: 42,
-                        color: Color.fromRGBO(72, 91, 108, 1),
+                        color: const Color.fromRGBO(72, 91, 108, 1),
                       ),
                     ),
-                    TextSpan(
+                    const TextSpan(
                       text: 'School Management App',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,

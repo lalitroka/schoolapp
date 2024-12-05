@@ -155,14 +155,8 @@ class _DashboardState extends State<Dashboard> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _buildFooterContainer(
-                        icontype: const Icon(
-                          Icons.emoji_emotions,
-                        ),
-                        title: 'unknown'),
-                    _buildFooterContainer(
-                        icontype: const Icon(Icons.emoji_emotions),
-                        title: 'unknown'),
+                    _buildFooterContainer(image: 'assets/laptop.png'),
+                    _buildFooterContainer(image: 'assets/laptop1.png'),
                   ],
                 )
               ],
@@ -217,19 +211,16 @@ _buildContainer({
   );
 }
 
-_buildFooterContainer({required Icon icontype, required String title}) {
+_buildFooterContainer({
+  required String image,
+}) {
   return Flexible(
-    child: Container(
-        height: 90,
-        width: 150,
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(10)),
-        child: ListTile(
-          title: icontype,
-          subtitle: Center(
-              child: Text(
-            title,
-          )),
-        )),
-  );
+      child: Container(
+    height: 90,
+    width: double.infinity,
+    decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        image: DecorationImage(image: AssetImage(image))),
+  ));
 }
